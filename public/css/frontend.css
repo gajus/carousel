@@ -1,0 +1,53 @@
+html,
+body {
+  margin: 0;
+  font: 12px/20px monospace;
+}
+#carousel {
+  width: 500px;
+  background: #f00;
+  margin-bottom: 20px;
+}
+#carousel .button-left,
+#carousel .button-right,
+#carousel .body,
+#carousel ul,
+#carousel li {
+  height: 100px;
+}
+#carousel ul,
+#carousel li {
+  padding: 0;
+  margin: 0;
+}
+#carousel ul {
+  background: #000;
+  list-style: none;
+  position: relative;
+}
+#carousel li {
+  background: #eee;
+  float: left;
+  width: 88px;
+  outline: 1px solid #f00;
+}
+#carousel .button-left,
+#carousel .button-right {
+  background: #00f;
+  width: 30px;
+  cursor: pointer;
+}
+#carousel .button-left {
+  float: left;
+}
+#carousel .button-right {
+  float: right;
+}
+#carousel .body {
+  margin: 0 30px;
+  background: #ccc;
+  overflow: hidden;
+}
+body {
+  padding: 20px;
+}

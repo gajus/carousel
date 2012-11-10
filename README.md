@@ -1,6 +1,6 @@
 # Simple, light and reusable carousel library
 
-[ay-carousel plugin](https://github.com/gajus/ay-carousel/) is a simple, reusable carousel library.
+[ay-carousel plugin](https://github.com/anuary/ay-carousel/) is a simple, reusable carousel library.
 
 ## Demo
 

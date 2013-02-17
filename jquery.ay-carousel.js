@@ -1,5 +1,5 @@
 /**
- * jQuery carousel v0.0.2 (2012 NOV 9)
+ * jQuery carousel v0.0.3 (2013 FEB 17)
  * https://github.com/gajus/ay-carousel
  *
  * Licensed under the BSD.
@@ -8,10 +8,11 @@
  * Author: Gajus Kuizinas <g.kuizinas@anuary.com>
  */
 (function($){
-	$.fn.ayCarousel	= function()
-	{
-		for(var i = 0, j = this.length; i < j; i++)
-		{
+	$.fn.ayCarousel	= function () {
+		var i,
+			j;
+	
+		for (i = 0, j = this.length; i < j; i++) {
 			var carousel = $(this[i]),
 				navigation = carousel.find('.button-left, .button-right'),
 				body = carousel.find('.body'),
@@ -20,34 +21,33 @@
 				wrapper_width = wrapper.width(),
 				elements = wrapper.children(),
 				wrapper_width = 0,
-				margin_left = 0;
+				margin_left = 0,
+				update_navigation,
+				i,
+				j;
 			
-			for(var i = 0, j = elements.length; i < j; i++)
-			{
+			for (i = 0, j = elements.length; i < j; i++) {
 				wrapper_width	+= $(elements[i]).outerWidth();
 			}
 			
 			wrapper.css({width: wrapper_width});
 			
-			var update_navigation	= function(){
+			update_navigation = function () {
 				$(navigation[0])[margin_left === 0 ? 'addClass' : 'removeClass']('disabled');
 				$(navigation[1])[wrapper_width-body_width+margin_left === 0 ? 'addClass' : 'removeClass']('disabled');
 			};
 			
 			update_navigation();
 			
-			navigation.on('click', function(){
+			navigation.on('click', function () {
 				var wrapper_offset = parseInt(wrapper.css('margin-left'));
 					request_direction = $(this).hasClass('button-left') ? 0 : 1,
 					remaining_right = wrapper_width+wrapper_offset-body_width,
 					remaining_left = wrapper_offset*-1;
 				
-				if(request_direction)
-				{	
+				if (request_direction) {	
 					margin_left = remaining_right > body_width ? wrapper_offset-body_width : wrapper_offset-remaining_right;
-				}
-				else
-				{	
+				} else {	
 					margin_left = remaining_left > body_width ? wrapper_offset+body_width : 0;
 				}
 				

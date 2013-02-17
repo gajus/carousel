@@ -43,6 +43,10 @@ body {
 #carousel .button-right {
   float: right;
 }
+#carousel .button-left.disabled,
+#carousel .button-right.disabled {
+  background: #000;
+}
 #carousel .body {
   margin: 0 30px;
   background: #ccc;
